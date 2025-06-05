@@ -1,0 +1,642 @@
+VERSION ""
+
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Part TMS Tester
+
+BO_ 1314 COMP_REQ: 8 TMS
+ SG_ VCU_EAC_Enable : 0|1@0+ (1,0) [0|1] "" Part
+ SG_ VCU_EAC_Target_Speed : 15|16@0+ (1,0) [0|8600] "RPM" Part
+
+BO_ 897 COMP_FB: 8 Part
+ SG_ EAC_CmpSts : 1|2@0+ (1,0) [0|3] "" TMS
+ SG_ EAC_CmpOpSpd : 15|16@0+ (1,0) [0|8600] "RPM" TMS
+ SG_ EAC_CmpOpVol : 31|8@0+ (4,0) [0|1000] "V" TMS
+ SG_ EAC_CmpBusCrnt : 39|8@0+ (0.2,0) [0|20] "A" TMS
+ SG_ EAC_CmpPhaseCrnt : 47|8@0+ (0.2,0) [0|40] "A" TMS
+ SG_ EAV_CmpOpTmp : 55|8@0+ (1,-40) [0|120] "℃" TMS
+ SG_ EAC_OverVol_Flt : 56|1@0+ (1,0) [0|1] "" TMS
+ SG_ EAC_UnderVol_Flt : 57|1@0+ (1,0) [0|1] "" TMS
+ SG_ EAC_LongOverCrnt_Flt : 58|1@0+ (1,0) [0|1] "" TMS
+ SG_ EAC_ShortOverCrnt_Flt : 59|1@0+ (1,0) [0|1] "" TMS
+ SG_ EAC_OverTmp_Flt : 60|1@0+ (1,0) [0|1] "" TMS
+ SG_ EAC_LostCommunication_Flt : 61|1@0+ (1,0) [0|1] "" TMS
+ SG_ EAC_Internal_Flt : 62|1@0+ (1,0) [0|1] "" TMS
+ SG_ EAC_Lock_Flt : 63|1@0+ (1,0) [0|1] "" TMS
+
+BO_ 1319 PUMP1_REQ: 8 TMS
+ SG_ VCU_PUMP1_Enable : 0|2@1+ (1,0) [0|2] "" Part
+ SG_ VCU_PUMP1_Target_PWM : 8|8@1+ (0.4,0) [0|100] "%" Part
+
+BO_ 1337 PUMP1_FB: 8 Part
+ SG_ PUMP1_Flt : 0|4@1+ (1,0) [0|8] "" TMS
+ SG_ PUMP1_FltLevel : 4|2@1+ (1,0) [0|3] "" TMS
+ SG_ PUMP1_Sts : 6|2@1+ (1,0) [0|1] "" TMS
+ SG_ PUMP1_Real_PWM : 8|8@1+ (0.4,0) [0|100] "%" TMS
+
+BO_ 1320 PUMP2_REQ: 8 TMS
+ SG_ VCU_PUMP2_Enable : 0|2@1+ (1,0) [0|2] "" Part
+ SG_ VCU_PUMP2_Target_PWM : 8|8@1+ (0.4,0) [0|100] "%" Part
+
+BO_ 1336 PUMP2_FB: 8 Part
+ SG_ PUMP2_Flt : 0|4@1+ (1,0) [0|8] "" TMS
+ SG_ PUMP2_FltLevel : 4|2@1+ (1,0) [0|3] "" TMS
+ SG_ PUMP2_Sts : 6|2@1+ (1,0) [0|1] "" TMS
+ SG_ PUMP2_Real_PWM : 8|8@1+ (0.4,0) [0|100] "%" TMS
+
+BO_ 1638 Debug_FactoryMode: 8 TMS
+ SG_ TMS_HardwareVersion : 0|8@1+ (1,0) [0|255] "" Tester
+ SG_ TMS_SoftwareVersion : 8|8@1+ (1,0) [0|255] "" Tester
+ SG_ TMS_AD_Voltage : 16|8@1+ (0.02,0) [0|5.1] "V" Tester
+ SG_ TMS_IGN_Sta : 24|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_T1_Sta : 28|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_T2_Sta : 29|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_T3_Sta : 30|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_LPT_T_Sta : 31|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_HPT_T_Sta : 32|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_Liquid1_Sta : 33|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_Liquid2_Sta : 34|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_LPT_P_Sta : 35|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_HPT_P_Sta : 36|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_Fan1_FB_Sta : 37|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_Tprotect_FB_Sta : 38|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_Pump_SW_Sta : 39|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_Fan2_FB_Sta : 40|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_Capture2_FB_Sta : 41|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_Capture1_FB_Sta : 42|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_HV_LK_Sta : 43|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_EXV_Sta : 48|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_FAN_Sta : 49|1@1+ (1,0) [0|1] "" Tester
+ SG_ TMS_2WayValue_Sta : 50|1@1+ (1,0) [0|1] "" Tester
+
+BO_ 1911 Debug_FactoryMode_REQ: 8 Part
+ SG_ VCU_PWM1_High_SET : 0|1@1+ (1,0) [0|0] "" TMS
+ SG_ VCU_PWM2_High_SET : 1|1@1+ (1,0) [0|0] "" TMS
+ SG_ VCU_PWM3_High_SET : 2|1@1+ (1,0) [0|0] "" TMS
+ SG_ VCU_PWM4_High_SET : 3|1@1+ (1,0) [0|0] "" TMS
+ SG_ VCU_PWM1_Low_SET : 4|1@1+ (1,0) [0|0] "" TMS
+ SG_ VCU_PWM2_Low_SET : 5|1@1+ (1,0) [0|0] "" TMS
+ SG_ VCU_PWM3_Low_SET : 6|1@1+ (1,0) [0|0] "" TMS
+ SG_ VCU_PWM4_Low_SET : 7|1@1+ (1,0) [0|0] "" TMS
+ SG_ VCU_LSD1_SET : 8|1@1+ (1,0) [0|0] "" TMS
+ SG_ VCU_LSD2_SET : 9|1@1+ (1,0) [0|0] "" TMS
+ SG_ VCU_LSD3_SET : 10|1@1+ (1,0) [0|0] "" TMS
+ SG_ VCU_LSD4_SET : 11|1@1+ (1,0) [0|0] "" TMS
+ SG_ TMS_AD_Channel : 24|4@1+ (1,0) [0|15] "" TMS
+
+BO_ 2364506673 TMC2: 8 Tester
+ SG_ TMC2_ComprEn : 20|2@1+ (1,0) [0|3] "" TMS
+ SG_ TMC2_ComprTgtSpd : 24|16@1+ (1,0) [0|8600] "rpm" TMS
+ SG_ TMC2_ElecExpValveTgtOpen : 40|8@1+ (0.4,0) [0|100] "%" TMS
+ SG_ TMC2_ThrwayValveTgtOpen : 48|8@1+ (0.4,0) [0|100] "%" TMS
+ SG_ TMC2_SixwayVlvTgtOpen : 56|8@1+ (1,0) [0|100] "%" TMS
+
+BO_ 2566868529 TMPTC1: 8 Tester
+ SG_ TMPTC1_PTC1_CtrlSt : 0|2@1+ (1,0) [0|3] "" TMS
+ SG_ TMPTC1_PTC1_SetPercentPower : 8|8@1+ (1,0) [0|255] "%" TMS
+ SG_ TMPTC1_SetTemp : 16|8@1+ (1,-40) [-40|210] "℃" TMS
+
+BO_ 2558132273 EAPMCPC: 8 Tester
+ SG_ Propulsion_Motor_Coolant_Pump1_E : 0|2@1+ (1,0) [0|3] "" TMS
+ SG_ Propulsion_Motor_Coolant : 24|8@1+ (0.5,0) [0|100] "%" TMS
+
+BO_ 2558197809 EAPECPC: 8 Tester
+ SG_ HVESS_Coolant_Pump_Ena : 0|2@1+ (1,0) [0|3] "" TMS
+ SG_ HVESS_Coolant_Pump : 24|8@1+ (0.5,0) [0|100] "%" TMS
+
+BO_ 2557804593 EAPMCF1C: 8 Tester
+ SG_ Propulsion_Motor_Coolant : 24|8@1+ (0.5,0) [0|100] "%" TMS
+
+BO_ 2566870658 TMS1: 8 TMS
+ SG_ TMS1_TMSCtrlrSt : 0|2@1+ (1,0) [0|3] "" Tester
+ SG_ TMS1_CompSuctTemp : 16|8@1+ (1,-40) [-40|210] "℃" Tester
+ SG_ TMS1_CompExhPress : 24|16@1+ (0.1,0) [0|6425.5] "kPa" Tester
+ SG_ TMS1_CompSuctPress : 40|16@1+ (0.1,0) [0|6425.5] "kPa" Tester
+
+BO_ 2364642946 HVESP1D6: 8 TMS
+ SG_ MorInletTemp : 0|8@1+ (1,-40) [-40|210] "℃" Tester
+ SG_ MorOutletTemp : 8|8@1+ (1,-40) [-40|210] "℃" Tester
+ SG_ HVESS_Outlet_Coolant : 16|8@1+ (1,-40) [-40|210] "℃" Tester
+ SG_ HVESS_Inlet_Coolant_Temperature : 24|8@1+ (1,-40) [-40|210] "℃" Tester
+
+BO_ 2566651522 EAPMCPS: 8 TMS
+ SG_ Propulsion_Motor_Coolant_Pu_0000 : 0|2@1+ (1,0) [0|3] "" Tester
+ SG_ Propulsion_Motor_CoolantPump1_Co : 2|4@1+ (1,0) [0|15] "" Tester
+ SG_ Propulsion_Motor_CoolantPump1Wor : 6|2@1+ (1,0) [0|3] "" Tester
+ SG_ Propulsion_MotorCoolantPump1PWM : 8|8@1+ (0.4,0) [0|100] "%" Tester
+
+BO_ 2566651778 EAPECPS: 8 TMS
+ SG_ HVESS_CoolantPumpEnaStatus : 0|2@1+ (1,0) [0|3] "" Tester
+ SG_ HVESS_Coolant_Pump_ControllerSta : 2|4@1+ (1,0) [0|15] "" Tester
+ SG_ HVESS_CoolantPump_WorkSt : 6|2@1+ (1,0) [0|3] "" Tester
+ SG_ HVESS_CoolantPump_PWM : 8|8@1+ (0.4,0) [0|100] "%" Tester
+
+BO_ 2566650242 EAPMCF1S: 8 TMS
+ SG_ Propulsion_Motor_CoolantFan1_Ena : 2|4@1+ (1,0) [0|15] "" Tester
+ SG_ Propulsion_Motor_CoolantFan1_Mot : 8|16@1+ (0.5,0) [0|32127.5] "rpm" Tester
+
+BO_ 2565812696 COMP: 8 TMS
+ SG_ COMP_ComprSpd : 0|16@1+ (1,0) [0|8600] "rpm" Tester
+ SG_ COMP_ComprSt : 24|2@1+ (1,0) [0|3] "" Tester
+ SG_ COMP_CompErrCode : 32|4@1+ (1,0) [0|15] "" Tester
+ SG_ COMP_CompTemp : 40|8@1+ (1,-40) [-40|215] "℃" Tester
+ SG_ COMP_CompRunCurr : 48|8@1+ (0.2,0) [0|51] "A" Tester
+ SG_ COMP_CompDCVol : 56|8@1+ (4,0) [0|1016] "V" Tester
+
+BO_ 2566869926 PTC1: 8 Part
+ SG_ PTC1_PTCWorkSt : 2|2@1+ (1,0) [0|3] "" TMS
+ SG_ PTC1_PTCErrCode : 4|4@1+ (1,0) [0|15] "" TMS
+ SG_ PTC1_PTCErrLevel : 16|2@1+ (1,0) [0|3] "" TMS
+ SG_ PTC1_PTCCurrPower : 24|8@1+ (1,0) [0|255] "%" TMS
+ SG_ PTC1_PTCOutletTemp : 32|8@1+ (1,-40) [-40|210] "℃" TMS
+ SG_ PTC1_PTCTemp : 40|8@1+ (1,-40) [-40|210] "℃" TMS
+ SG_ PTC1_PTCRunCurr : 48|8@1+ (0.2,0) [0|210] "A" TMS
+ SG_ PTC1_PTCRunVol : 56|8@1+ (4,0) [0|210] "V" TMS
+
+BO_ 2566871170 TMS3: 8 TMS
+ SG_ TMS3_ElecExpValve2Open_Chiller : 40|8@1+ (0.4,0) [0|100] "%" Tester
+
+BO_ 2566871426 TMS4: 8 TMS
+ SG_ TMS4_MorCoolantLevelResistance : 0|16@1+ (0.01,0) [0|642.55] "kΩ" Tester
+ SG_ TMS4_BattCoolantLevelResistance : 16|16@1+ (0.01,0) [0|642.55] "kΩ" Tester
+
+BO_ 2566871682 TMS5: 8 TMS
+ SG_ TMS5_ThrwayValve1Fault : 8|4@1+ (1,0) [0|15] "" Tester
+ SG_ TMS5_ThrwayValve1St : 16|8@1+ (0.4,0) [0|100] "%" Tester
+ SG_ TMS5_SixwayValveFault : 36|4@1+ (1,0) [0|15] "" Tester
+
+BO_ 2566871938 TMSCFG: 8 TMS
+ SG_ TMS_SoftwareVer : 0|16@1+ (0.01,0) [0|9.99] "" Tester
+ SG_ TMS_HardwareVer : 16|16@1+ (0.01,0) [0|9.99] "" Tester
+ SG_ TMS_SupplierCode : 32|32@1+ (0.01,0) [0|1] "" Tester
+
+BO_ 2566834818 TMSDM1: 8 TMS
+ SG_ TMSDM1_ProtectLmpSt : 0|2@1+ (1,0) [0|3] "" Tester
+ SG_ TMSDM1_AmberWarnLmpSt : 2|2@1+ (1,0) [0|3] "" Tester
+ SG_ TMSDM1_RedStopLmpSt : 4|2@1+ (1,0) [0|3] "" Tester
+ SG_ TMSDM1_SPN1 : 16|16@1+ (1,0) [0|65535] "" Tester
+ SG_ TMSDM1_FMI : 32|5@1+ (1,0) [0|31] "" Tester
+ SG_ TMSDM1_SPN2 : 37|3@1+ (1,0) [0|3] "" Tester
+ SG_ TMSDM1_OccuCnt : 40|7@1+ (1,0) [0|128] "" Tester
+ SG_ TMSDM1_SPNConMethod : 47|1@1+ (1,0) [0|1] "" Tester
+
+
+CM_ SG_ 1314 VCU_EAC_Enable "压缩机使能指令";
+CM_ SG_ 1314 VCU_EAC_Target_Speed "压缩机目标转速";
+CM_ SG_ 897 EAC_CmpSts "压缩机工作状态";
+CM_ SG_ 897 EAC_CmpOpSpd "压缩机转速";
+CM_ SG_ 897 EAC_CmpOpVol "压缩机工作电压";
+CM_ SG_ 897 EAC_CmpBusCrnt "压缩机母线电流";
+CM_ SG_ 897 EAC_CmpPhaseCrnt "压缩机相线电流";
+CM_ SG_ 897 EAV_CmpOpTmp "压缩机温度";
+CM_ SG_ 897 EAC_OverVol_Flt "过压故障";
+CM_ SG_ 897 EAC_UnderVol_Flt "欠压故障";
+CM_ SG_ 897 EAC_LongOverCrnt_Flt "长时过流故障";
+CM_ SG_ 897 EAC_ShortOverCrnt_Flt "瞬时过流故障";
+CM_ SG_ 897 EAC_OverTmp_Flt "过温故障";
+CM_ SG_ 897 EAC_LostCommunication_Flt "通讯故障";
+CM_ SG_ 897 EAC_Internal_Flt "内部故障";
+CM_ SG_ 897 EAC_Lock_Flt "故障锁死";
+CM_ SG_ 1319 VCU_PUMP1_Enable "电池水泵使能指令";
+CM_ SG_ 1319 VCU_PUMP1_Target_PWM "电池水泵目标占空比";
+CM_ SG_ 1337 PUMP1_Flt "电池水泵故障";
+CM_ SG_ 1337 PUMP1_FltLevel "电池水泵故障等级";
+CM_ SG_ 1337 PUMP1_Sts "电池水泵工作状态";
+CM_ SG_ 1337 PUMP1_Real_PWM "电池水泵实际占空比";
+CM_ SG_ 1320 VCU_PUMP2_Enable "电机水泵使能指令";
+CM_ SG_ 1320 VCU_PUMP2_Target_PWM "电机水泵目标占空比";
+CM_ SG_ 1336 PUMP2_Flt "电机水泵故障";
+CM_ SG_ 1336 PUMP2_FltLevel "电机水泵故障等级";
+CM_ SG_ 1336 PUMP2_Sts "电机水泵工作状态";
+CM_ SG_ 1336 PUMP2_Real_PWM "电机水泵实际占空比";
+CM_ SG_ 1638 TMS_HardwareVersion "硬件版本";
+CM_ SG_ 1638 TMS_SoftwareVersion "软件版本";
+CM_ SG_ 1638 TMS_AD_Voltage "AD采集电压";
+CM_ SG_ 1638 TMS_IGN_Sta "IGN状态";
+CM_ SG_ 1638 TMS_T1_Sta "T1故障状态";
+CM_ SG_ 1638 TMS_T2_Sta "T2故障状态";
+CM_ SG_ 1638 TMS_T3_Sta "T3故障状态";
+CM_ SG_ 1638 TMS_LPT_T_Sta "LPT_T故障状态";
+CM_ SG_ 1638 TMS_HPT_T_Sta "HPT_T故障状态";
+CM_ SG_ 1638 TMS_Liquid1_Sta "Liquid1故障状态";
+CM_ SG_ 1638 TMS_Liquid2_Sta "Liquid2故障状态";
+CM_ SG_ 1638 TMS_LPT_P_Sta "LPT_P故障状态";
+CM_ SG_ 1638 TMS_HPT_P_Sta "HPT_P故障状态";
+CM_ SG_ 1638 TMS_Fan1_FB_Sta "低有效通道FAN1反馈状态";
+CM_ SG_ 1638 TMS_Tprotect_FB_Sta "低有效通道Tprotect反馈状态";
+CM_ SG_ 1638 TMS_Pump_SW_Sta "低有效通道PumpSW反馈状态";
+CM_ SG_ 1638 TMS_Fan2_FB_Sta "低有效通道FAN2反馈状态";
+CM_ SG_ 1638 TMS_Capture2_FB_Sta "高有效通道Capture2反馈状态";
+CM_ SG_ 1638 TMS_Capture1_FB_Sta "高有效通道Capture1反馈状态";
+CM_ SG_ 1638 TMS_HV_LK_Sta "高有效通道HVLK反馈状态";
+CM_ SG_ 1638 TMS_EXV_Sta "EXV故障状态";
+CM_ SG_ 1638 TMS_FAN_Sta "FAN故障状态";
+CM_ SG_ 1638 TMS_2WayValue_Sta "KHAD二通阀状态";
+CM_ SG_ 1911 VCU_PWM1_High_SET "PWM1通道高有效使能";
+CM_ SG_ 1911 VCU_PWM2_High_SET "PWM2通道高有效使能";
+CM_ SG_ 1911 VCU_PWM3_High_SET "PWM3通道高有效使能";
+CM_ SG_ 1911 VCU_PWM4_High_SET "PWM4通道高有效使能";
+CM_ SG_ 1911 VCU_PWM1_Low_SET "PWM1通道低有效使能";
+CM_ SG_ 1911 VCU_PWM2_Low_SET "PWM2通道低有效使能";
+CM_ SG_ 1911 VCU_PWM3_Low_SET "PWM3通道低有效使能";
+CM_ SG_ 1911 VCU_PWM4_Low_SET "PWM4通道低有效使能";
+CM_ SG_ 1911 VCU_LSD1_SET "低边驱动通道1使能";
+CM_ SG_ 1911 VCU_LSD2_SET "低边驱动通道2使能";
+CM_ SG_ 1911 VCU_LSD3_SET "低边驱动通道3使能";
+CM_ SG_ 1911 VCU_LSD4_SET "低边驱动通道4使能";
+CM_ SG_ 1911 TMS_AD_Channel "AD采集通道";
+CM_ SG_ 2364506673 TMC2_ComprEn "压缩机开关机命令";
+CM_ SG_ 2364506673 TMC2_ComprTgtSpd "空调压缩机目标转速";
+CM_ SG_ 2364506673 TMC2_ElecExpValveTgtOpen "电子膨胀阀目标开度";
+CM_ SG_ 2364506673 TMC2_ThrwayValveTgtOpen "二通阀目标开度";
+CM_ SG_ 2364506673 TMC2_SixwayVlvTgtOpen "六通阀目标开度";
+CM_ SG_ 2566868529 TMPTC1_PTC1_CtrlSt "电池加热PTC1启停信号";
+CM_ SG_ 2566868529 TMPTC1_PTC1_SetPercentPower "电池加热PTC1设定功率百分比";
+CM_ SG_ 2566868529 TMPTC1_SetTemp "电池加热PTC1设定温度";
+CM_ SG_ 2558132273 Propulsion_Motor_Coolant_Pump1_E "电机冷却水泵1使能";
+CM_ SG_ 2558197809 HVESS_Coolant_Pump_Ena "电池冷却水泵使能";
+CM_ SG_ 2566870658 TMS1_TMSCtrlrSt "TMS控制器状态";
+CM_ SG_ 2566870658 TMS1_CompSuctTemp "压缩机吸气温度";
+CM_ SG_ 2566870658 TMS1_CompExhPress "压缩机排气压力";
+CM_ SG_ 2566870658 TMS1_CompSuctPress "压缩机吸气压力";
+CM_ SG_ 2364642946 MorInletTemp "电机冷却进水温度 T3";
+CM_ SG_ 2364642946 MorOutletTemp "电机冷却回水温度 T4";
+CM_ SG_ 2364642946 HVESS_Inlet_Coolant_Temperature "电池冷却进水温度 T1";
+CM_ SG_ 2566651522 Propulsion_Motor_Coolant_Pu_0000 "电机冷却水泵1使能状态";
+CM_ SG_ 2566651522 Propulsion_Motor_CoolantPump1_Co "电机冷却水泵1控制器状态原因码";
+CM_ SG_ 2566651522 Propulsion_Motor_CoolantPump1Wor "电机冷却水泵1工作状态";
+CM_ SG_ 2566651522 Propulsion_MotorCoolantPump1PWM "电机冷却水泵1实际占空比反馈";
+CM_ SG_ 2566651778 HVESS_CoolantPumpEnaStatus "电池冷却水泵使能状态";
+CM_ SG_ 2566651778 HVESS_Coolant_Pump_ControllerSta "电池冷却水泵控制器状态原因码";
+CM_ SG_ 2566651778 HVESS_CoolantPump_WorkSt "电池冷却水泵工作状态";
+CM_ SG_ 2566651778 HVESS_CoolantPump_PWM "电池冷却水泵实际占空比反馈";
+CM_ SG_ 2566650242 Propulsion_Motor_CoolantFan1_Ena "电机风扇控制器状态原因码";
+CM_ SG_ 2566650242 Propulsion_Motor_CoolantFan1_Mot "电机风扇转速";
+CM_ SG_ 2565812696 COMP_ComprSpd "空调压缩机转速";
+CM_ SG_ 2565812696 COMP_ComprSt "空调压缩机工作状态";
+CM_ SG_ 2565812696 COMP_CompErrCode "空调压缩机故障反馈";
+CM_ SG_ 2565812696 COMP_CompTemp "压缩机温度";
+CM_ SG_ 2565812696 COMP_CompRunCurr "空调压缩机母线电流";
+CM_ SG_ 2565812696 COMP_CompDCVol "空调压缩机直流电压";
+CM_ SG_ 2566869926 PTC1_PTCWorkSt "电池加热PTC1运行状态";
+CM_ SG_ 2566869926 PTC1_PTCErrCode "电池加热PTC1故障代码";
+CM_ SG_ 2566869926 PTC1_PTCErrLevel "电池加热PTC1故障等级";
+CM_ SG_ 2566869926 PTC1_PTCCurrPower "电池加热PTC1运行功率";
+CM_ SG_ 2566869926 PTC1_PTCOutletTemp "电池加热PTC1出水温度";
+CM_ SG_ 2566869926 PTC1_PTCTemp "电池加热PTC1温度";
+CM_ SG_ 2566869926 PTC1_PTCRunCurr "电池加热PTC1工作电流";
+CM_ SG_ 2566869926 PTC1_PTCRunVol "电池加热PTC1工作电压";
+CM_ SG_ 2566871170 TMS3_ElecExpValve2Open_Chiller "电子膨胀阀2开度-Chiller";
+CM_ SG_ 2566871426 TMS4_MorCoolantLevelResistance "电机冷却液位阻值";
+CM_ SG_ 2566871426 TMS4_BattCoolantLevelResistance "电池冷却液位阻值";
+CM_ SG_ 2566871682 TMS5_ThrwayValve1Fault "二通阀1故障反馈";
+CM_ SG_ 2566871682 TMS5_ThrwayValve1St "二通阀1位置反馈";
+CM_ SG_ 2566871682 TMS5_SixwayValveFault "六通阀故障反馈";
+CM_ SG_ 2566871938 TMS_SoftwareVer "软件版本号";
+CM_ SG_ 2566871938 TMS_HardwareVer "硬件版本号";
+CM_ SG_ 2566871938 TMS_SupplierCode "供应商代码";
+CM_ SG_ 2566834818 TMSDM1_ProtectLmpSt "保护灯状态";
+CM_ SG_ 2566834818 TMSDM1_AmberWarnLmpSt "琥珀色警告灯状态";
+CM_ SG_ 2566834818 TMSDM1_RedStopLmpSt "红色停止灯状态";
+CM_ SG_ 2566834818 TMSDM1_SPN1 "故障SPN";
+CM_ SG_ 2566834818 TMSDM1_FMI "故障FMI";
+CM_ SG_ 2566834818 TMSDM1_SPN2 "故障SPN";
+CM_ SG_ 2566834818 TMSDM1_OccuCnt "故障计数";
+CM_ SG_ 2566834818 TMSDM1_SPNConMethod "SPN转换方式";
+
+BA_DEF_ "BusType" STRING;
+BA_DEF_ "ProtocolType" STRING;
+BA_DEF_ "DBName" STRING;
+BA_DEF_ "Manufacturer" STRING;
+BA_DEF_ BU_ "ECU" STRING;
+BA_DEF_ BU_ "NmStationAddress" INT 0 254;
+BA_DEF_ BU_ "CANAAC" INT 0 1;
+BA_DEF_ BU_ "CANIndustryGroup" INT 0 7;
+BA_DEF_ BU_ "CANSystem" INT 0 127;
+BA_DEF_ BU_ "CANSystemInstance" INT 0 15;
+BA_DEF_ BU_ "CANFunction" INT 0 255;
+BA_DEF_ BU_ "CANFunctionInstance" INT 0 7;
+BA_DEF_ BU_ "CANECUInstance" INT 0 3;
+BA_DEF_ BU_ "CANManufacturerCode" INT 0 2047;
+BA_DEF_ BU_ "CANIdentityNumber" INT 0 2097151;
+BA_DEF_ SG_ "SigType" ENUM "Default","Range","RangeSigned","ASCII","Discrete","Control","ReferencePGN","DTC","StringDelimiter","StringLength","StringLengthControl","MessageCounter","MessageChecksum";
+BA_DEF_ SG_ "SPN" INT 0 524287;
+BA_DEF_ SG_ "GenSigILSupport" ENUM "No","Yes";
+BA_DEF_ SG_ "GenSigSendType" ENUM "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ SG_ "GenSigInactiveValue" INT 0 1000000;
+BA_DEF_ SG_ "GenSigStartValue" INT 0 10000;
+BA_DEF_ SG_ "GenSigEVName" STRING;
+BA_DEF_ BO_ "GenMsgILSupport" ENUM"No","Yes";
+BA_DEF_ BO_ "GenMsgSendType" ENUM "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","noMsgSendType";
+BA_DEF_ BO_ "GenMsgDelayTime" INT 0 1000;
+BA_DEF_ BO_ "GenMsgStartDelayTime" INT 0 100000;
+BA_DEF_ BO_ "GenMsgFastOnStart" INT 0 1000000;
+BA_DEF_ BO_ "GenMsgNrOfRepetition" INT 0 1000000;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 60000;
+BA_DEF_ BO_ "GenMsgCycleTimeFast" INT 0 1000000;
+BA_DEF_ BO_ "GenMsgRequestable" INT 0 1;
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","J1939PG";
+BA_DEF_DEF_ "BusType" "";
+BA_DEF_DEF_ "ProtocolType" "";
+BA_DEF_DEF_ "DBName" "";
+BA_DEF_DEF_ "Manufacturer" "Vector";
+BA_DEF_DEF_ "ECU" "";
+BA_DEF_DEF_ "NmStationAddress" 254;
+BA_DEF_DEF_ "CANAAC" 0;
+BA_DEF_DEF_ "CANIndustryGroup" 0;
+BA_DEF_DEF_ "CANSystem" 0;
+BA_DEF_DEF_ "CANSystemInstance" 0;
+BA_DEF_DEF_ "CANFunction" 0;
+BA_DEF_DEF_ "CANFunctionInstance" 0;
+BA_DEF_DEF_ "CANECUInstance" 0;
+BA_DEF_DEF_ "CANManufacturerCode" 0;
+BA_DEF_DEF_ "CANIdentityNumber" 0;
+BA_DEF_DEF_ "SigType" "Default";
+BA_DEF_DEF_ "SPN" 0;
+BA_DEF_DEF_ "GenSigILSupport" "Yes";
+BA_DEF_DEF_ "GenSigSendType" "NoSigSendType";
+BA_DEF_DEF_ "GenSigInactiveValue" 0;
+BA_DEF_DEF_ "GenSigStartValue" 0;
+BA_DEF_DEF_ "GenSigEVName" "Env@Nodename_@Signame";
+BA_DEF_DEF_ "GenMsgILSupport" "Yes";
+BA_DEF_DEF_ "GenMsgSendType" "noMsgSendType";
+BA_DEF_DEF_ "GenMsgDelayTime" 0;
+BA_DEF_DEF_ "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_ "GenMsgFastOnStart" 0;
+BA_DEF_DEF_ "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_ "GenMsgRequestable" 1;
+BA_ "ProtocolType" "";
+BA_ "Manufacturer" "WX_DFast";
+BA_ "BusType" "CAN";
+BA_ "DBName" "CAN_Matrix";
+BA_ "GenMsgCycleTime" BO_ 1314 500;
+BA_ "GenMsgSendType" BO_ 1314 0;
+BA_ "GenMsgCycleTime" BO_ 897 500;
+BA_ "GenMsgSendType" BO_ 897 0;
+BA_ "GenMsgCycleTime" BO_ 1319 200;
+BA_ "GenMsgSendType" BO_ 1319 0;
+BA_ "GenMsgCycleTime" BO_ 1337 200;
+BA_ "GenMsgSendType" BO_ 1337 0;
+BA_ "GenMsgCycleTime" BO_ 1320 200;
+BA_ "GenMsgSendType" BO_ 1320 0;
+BA_ "GenMsgCycleTime" BO_ 1336 200;
+BA_ "GenMsgSendType" BO_ 1336 0;
+BA_ "GenMsgCycleTime" BO_ 1638 100;
+BA_ "GenMsgSendType" BO_ 1638 0;
+BA_ "GenMsgCycleTime" BO_ 1911 100;
+BA_ "GenMsgSendType" BO_ 1911 0;
+BA_ "GenMsgCycleTime" BO_ 2364506673 100;
+BA_ "GenMsgSendType" BO_ 2364506673 0;
+BA_ "GenMsgCycleTime" BO_ 2566868529 1000;
+BA_ "GenMsgSendType" BO_ 2566868529 0;
+BA_ "GenMsgCycleTime" BO_ 2558132273 1000;
+BA_ "GenMsgSendType" BO_ 2558132273 0;
+BA_ "GenMsgCycleTime" BO_ 2558197809 1000;
+BA_ "GenMsgSendType" BO_ 2558197809 0;
+BA_ "GenMsgCycleTime" BO_ 2557804593 1000;
+BA_ "GenMsgSendType" BO_ 2557804593 0;
+BA_ "GenMsgCycleTime" BO_ 2566870658 100;
+BA_ "GenMsgSendType" BO_ 2566870658 0;
+BA_ "GenMsgCycleTime" BO_ 2364642946 100;
+BA_ "GenMsgSendType" BO_ 2364642946 0;
+BA_ "GenMsgCycleTime" BO_ 2566651522 1000;
+BA_ "GenMsgSendType" BO_ 2566651522 0;
+BA_ "GenMsgCycleTime" BO_ 2566651778 1000;
+BA_ "GenMsgSendType" BO_ 2566651778 0;
+BA_ "GenMsgCycleTime" BO_ 2566650242 1000;
+BA_ "GenMsgSendType" BO_ 2566650242 0;
+BA_ "GenMsgCycleTime" BO_ 2565812696 100;
+BA_ "GenMsgSendType" BO_ 2565812696 0;
+BA_ "GenMsgCycleTime" BO_ 2566869926 1000;
+BA_ "GenMsgSendType" BO_ 2566869926 0;
+BA_ "GenMsgCycleTime" BO_ 2566871170 100;
+BA_ "GenMsgSendType" BO_ 2566871170 0;
+BA_ "GenMsgCycleTime" BO_ 2566871426 1000;
+BA_ "GenMsgSendType" BO_ 2566871426 0;
+BA_ "GenMsgCycleTime" BO_ 2566871682 1000;
+BA_ "GenMsgSendType" BO_ 2566871682 0;
+BA_ "GenMsgCycleTime" BO_ 2566871938 5000;
+BA_ "GenMsgSendType" BO_ 2566871938 0;
+BA_ "GenMsgCycleTime" BO_ 2566834818 1000;
+BA_ "GenMsgSendType" BO_ 2566834818 0;
+BA_ "GenSigStartValue" SG_ 1314 VCU_EAC_Enable 0;
+BA_ "GenSigStartValue" SG_ 1314 VCU_EAC_Target_Speed 0;
+BA_ "GenSigStartValue" SG_ 897 EAC_CmpSts 0;
+BA_ "GenSigStartValue" SG_ 897 EAC_CmpOpSpd 0;
+BA_ "GenSigStartValue" SG_ 897 EAC_CmpOpVol 0;
+BA_ "GenSigStartValue" SG_ 897 EAC_CmpBusCrnt 0;
+BA_ "GenSigStartValue" SG_ 897 EAC_CmpPhaseCrnt 0;
+BA_ "GenSigStartValue" SG_ 897 EAV_CmpOpTmp 40;
+BA_ "GenSigStartValue" SG_ 897 EAC_OverVol_Flt 0;
+BA_ "GenSigStartValue" SG_ 897 EAC_UnderVol_Flt 0;
+BA_ "GenSigStartValue" SG_ 897 EAC_LongOverCrnt_Flt 0;
+BA_ "GenSigStartValue" SG_ 897 EAC_ShortOverCrnt_Flt 0;
+BA_ "GenSigStartValue" SG_ 897 EAC_OverTmp_Flt 0;
+BA_ "GenSigStartValue" SG_ 897 EAC_LostCommunication_Flt 0;
+BA_ "GenSigStartValue" SG_ 897 EAC_Internal_Flt 0;
+BA_ "GenSigStartValue" SG_ 897 EAC_Lock_Flt 0;
+BA_ "GenSigStartValue" SG_ 1319 VCU_PUMP1_Enable 0;
+BA_ "GenSigStartValue" SG_ 1319 VCU_PUMP1_Target_PWM 0;
+BA_ "GenSigStartValue" SG_ 1337 PUMP1_Flt 0;
+BA_ "GenSigStartValue" SG_ 1337 PUMP1_FltLevel 0;
+BA_ "GenSigStartValue" SG_ 1337 PUMP1_Sts 0;
+BA_ "GenSigStartValue" SG_ 1337 PUMP1_Real_PWM 0;
+BA_ "GenSigStartValue" SG_ 1320 VCU_PUMP2_Enable 0;
+BA_ "GenSigStartValue" SG_ 1320 VCU_PUMP2_Target_PWM 0;
+BA_ "GenSigStartValue" SG_ 1336 PUMP2_Flt 0;
+BA_ "GenSigStartValue" SG_ 1336 PUMP2_FltLevel 0;
+BA_ "GenSigStartValue" SG_ 1336 PUMP2_Sts 0;
+BA_ "GenSigStartValue" SG_ 1336 PUMP2_Real_PWM 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_HardwareVersion 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_SoftwareVersion 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_AD_Voltage 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_IGN_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_T1_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_T2_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_T3_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_LPT_T_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_HPT_T_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_Liquid1_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_Liquid2_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_LPT_P_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_HPT_P_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_Fan1_FB_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_Tprotect_FB_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_Pump_SW_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_Fan2_FB_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_Capture2_FB_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_Capture1_FB_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_HV_LK_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_EXV_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_FAN_Sta 0;
+BA_ "GenSigStartValue" SG_ 1638 TMS_2WayValue_Sta 0;
+BA_ "GenSigStartValue" SG_ 1911 VCU_PWM1_High_SET 0;
+BA_ "GenSigStartValue" SG_ 1911 VCU_PWM2_High_SET 0;
+BA_ "GenSigStartValue" SG_ 1911 VCU_PWM3_High_SET 0;
+BA_ "GenSigStartValue" SG_ 1911 VCU_PWM4_High_SET 0;
+BA_ "GenSigStartValue" SG_ 1911 VCU_PWM1_Low_SET 0;
+BA_ "GenSigStartValue" SG_ 1911 VCU_PWM2_Low_SET 0;
+BA_ "GenSigStartValue" SG_ 1911 VCU_PWM3_Low_SET 0;
+BA_ "GenSigStartValue" SG_ 1911 VCU_PWM4_Low_SET 0;
+BA_ "GenSigStartValue" SG_ 1911 VCU_LSD1_SET 0;
+BA_ "GenSigStartValue" SG_ 1911 VCU_LSD2_SET 0;
+BA_ "GenSigStartValue" SG_ 1911 VCU_LSD3_SET 0;
+BA_ "GenSigStartValue" SG_ 1911 VCU_LSD4_SET 0;
+BA_ "GenSigStartValue" SG_ 1911 TMS_AD_Channel 0;
+BA_ "GenSigStartValue" SG_ 2364506673 TMC2_ComprEn 0;
+BA_ "GenSigStartValue" SG_ 2364506673 TMC2_ComprTgtSpd 0;
+BA_ "GenSigStartValue" SG_ 2364506673 TMC2_ElecExpValveTgtOpen 0;
+BA_ "GenSigStartValue" SG_ 2364506673 TMC2_ThrwayValveTgtOpen 0;
+BA_ "GenSigStartValue" SG_ 2364506673 TMC2_SixwayVlvTgtOpen 0;
+BA_ "GenSigStartValue" SG_ 2566868529 TMPTC1_PTC1_CtrlSt 0;
+BA_ "GenSigStartValue" SG_ 2566868529 TMPTC1_PTC1_SetPercentPower 0;
+BA_ "GenSigStartValue" SG_ 2566868529 TMPTC1_SetTemp 256;
+BA_ "GenSigStartValue" SG_ 2558132273 Propulsion_Motor_Coolant_Pump1_E 0;
+BA_ "GenSigStartValue" SG_ 2558132273 Propulsion_Motor_Coolant 0;
+BA_ "GenSigStartValue" SG_ 2558197809 HVESS_Coolant_Pump_Ena 0;
+BA_ "GenSigStartValue" SG_ 2558197809 HVESS_Coolant_Pump 0;
+BA_ "GenSigStartValue" SG_ 2557804593 Propulsion_Motor_Coolant 0;
+BA_ "GenSigStartValue" SG_ 2566870658 TMS1_TMSCtrlrSt 0;
+BA_ "GenSigStartValue" SG_ 2566870658 TMS1_CompSuctTemp 256;
+BA_ "GenSigStartValue" SG_ 2566870658 TMS1_CompExhPress 0;
+BA_ "GenSigStartValue" SG_ 2566870658 TMS1_CompSuctPress 0;
+BA_ "GenSigStartValue" SG_ 2364642946 MorInletTemp 256;
+BA_ "GenSigStartValue" SG_ 2364642946 MorOutletTemp 256;
+BA_ "GenSigStartValue" SG_ 2364642946 HVESS_Outlet_Coolant 256;
+BA_ "GenSigStartValue" SG_ 2364642946 HVESS_Inlet_Coolant_Temperature 256;
+BA_ "GenSigStartValue" SG_ 2566651522 Propulsion_Motor_Coolant_Pu_0000 0;
+BA_ "GenSigStartValue" SG_ 2566651522 Propulsion_Motor_CoolantPump1_Co 0;
+BA_ "GenSigStartValue" SG_ 2566651522 Propulsion_Motor_CoolantPump1Wor 0;
+BA_ "GenSigStartValue" SG_ 2566651522 Propulsion_MotorCoolantPump1PWM 0;
+BA_ "GenSigStartValue" SG_ 2566651778 HVESS_CoolantPumpEnaStatus 0;
+BA_ "GenSigStartValue" SG_ 2566651778 HVESS_Coolant_Pump_ControllerSta 0;
+BA_ "GenSigStartValue" SG_ 2566651778 HVESS_CoolantPump_WorkSt 0;
+BA_ "GenSigStartValue" SG_ 2566651778 HVESS_CoolantPump_PWM 0;
+BA_ "GenSigStartValue" SG_ 2566650242 Propulsion_Motor_CoolantFan1_Ena 0;
+BA_ "GenSigStartValue" SG_ 2566650242 Propulsion_Motor_CoolantFan1_Mot 0;
+BA_ "GenSigStartValue" SG_ 2565812696 COMP_ComprSpd 0;
+BA_ "GenSigStartValue" SG_ 2565812696 COMP_ComprSt 0;
+BA_ "GenSigStartValue" SG_ 2565812696 COMP_CompErrCode 0;
+BA_ "GenSigStartValue" SG_ 2565812696 COMP_CompTemp 256;
+BA_ "GenSigStartValue" SG_ 2565812696 COMP_CompRunCurr 0;
+BA_ "GenSigStartValue" SG_ 2565812696 COMP_CompDCVol 0;
+BA_ "GenSigStartValue" SG_ 2566869926 PTC1_PTCWorkSt 0;
+BA_ "GenSigStartValue" SG_ 2566869926 PTC1_PTCErrCode 0;
+BA_ "GenSigStartValue" SG_ 2566869926 PTC1_PTCErrLevel 0;
+BA_ "GenSigStartValue" SG_ 2566869926 PTC1_PTCCurrPower 0;
+BA_ "GenSigStartValue" SG_ 2566869926 PTC1_PTCOutletTemp 256;
+BA_ "GenSigStartValue" SG_ 2566869926 PTC1_PTCTemp 256;
+BA_ "GenSigStartValue" SG_ 2566869926 PTC1_PTCRunCurr 0;
+BA_ "GenSigStartValue" SG_ 2566869926 PTC1_PTCRunVol 0;
+BA_ "GenSigStartValue" SG_ 2566871170 TMS3_ElecExpValve2Open_Chiller 0;
+BA_ "GenSigStartValue" SG_ 2566871426 TMS4_MorCoolantLevelResistance 0;
+BA_ "GenSigStartValue" SG_ 2566871426 TMS4_BattCoolantLevelResistance 0;
+BA_ "GenSigStartValue" SG_ 2566871682 TMS5_ThrwayValve1Fault 0;
+BA_ "GenSigStartValue" SG_ 2566871682 TMS5_ThrwayValve1St 0;
+BA_ "GenSigStartValue" SG_ 2566871682 TMS5_SixwayValveFault 0;
+BA_ "GenSigStartValue" SG_ 2566871938 TMS_SoftwareVer 0;
+BA_ "GenSigStartValue" SG_ 2566871938 TMS_HardwareVer 0;
+BA_ "GenSigStartValue" SG_ 2566871938 TMS_SupplierCode 0;
+BA_ "GenSigStartValue" SG_ 2566834818 TMSDM1_ProtectLmpSt 0;
+BA_ "GenSigStartValue" SG_ 2566834818 TMSDM1_AmberWarnLmpSt 0;
+BA_ "GenSigStartValue" SG_ 2566834818 TMSDM1_RedStopLmpSt 0;
+BA_ "GenSigStartValue" SG_ 2566834818 TMSDM1_SPN1 0;
+BA_ "GenSigStartValue" SG_ 2566834818 TMSDM1_FMI 0;
+BA_ "GenSigStartValue" SG_ 2566834818 TMSDM1_SPN2 0;
+BA_ "GenSigStartValue" SG_ 2566834818 TMSDM1_OccuCnt 0;
+BA_ "GenSigStartValue" SG_ 2566834818 TMSDM1_SPNConMethod 0;
+
+VAL_ 1314 VCU_EAC_Enable 0 "Disable" 1 "Enable";
+VAL_ 897 EAC_CmpSts 0 "OFF" 1 "ON" 3 "Fault";
+VAL_ 897 EAC_OverVol_Flt 0 "Normal" 1 "Failure";
+VAL_ 897 EAC_UnderVol_Flt 0 "Normal" 1 "Failure";
+VAL_ 897 EAC_LongOverCrnt_Flt 0 "Normal" 1 "Failure";
+VAL_ 897 EAC_ShortOverCrnt_Flt 0 "Normal" 1 "Failure";
+VAL_ 897 EAC_OverTmp_Flt 0 "Normal" 1 "Failure";
+VAL_ 897 EAC_LostCommunication_Flt 0 "Normal" 1 "Failure";
+VAL_ 897 EAC_Internal_Flt 0 "Normal" 1 "Failure";
+VAL_ 897 EAC_Lock_Flt 0 "Normal" 1 "Failure";
+VAL_ 1319 VCU_PUMP1_Enable 0 "Disable" 1 "Enable";
+VAL_ 1337 PUMP1_Flt 0 "Normal" 1 "PhaseShort_Flt" 2 "OverCrnt_Flt" 3 "NoLoad_Fit" 4 "OverVol_Flt" 5 "OverTmp_Flt" 6 "MotorStall_Flt" 7 "UnderVol_Flt" 8 "LostCommunication_Flt" 15 "Invalid";
+VAL_ 1337 PUMP1_FltLevel 0 "Normal" 1 "Level1" 2 "Level2" 3 "Level3";
+VAL_ 1337 PUMP1_Sts 0 "OFF" 1 "ON";
+VAL_ 1320 VCU_PUMP2_Enable 0 "Disable" 1 "Enable";
+VAL_ 1336 PUMP2_Flt 0 "Normal" 1 "PhaseShort_Flt" 2 "OverCrnt_Flt" 3 "NoLoad_Fit" 4 "OverVol_Flt" 5 "OverTmp_Flt" 6 "MotorStall_Flt" 7 "UnderVol_Flt" 8 "LostCommunication_Flt" 15 "Invalid";
+VAL_ 1336 PUMP2_FltLevel 0 "Normal" 1 "Level1" 2 "Level2" 3 "Level3";
+VAL_ 1336 PUMP2_Sts 0 "OFF" 1 "ON";
+VAL_ 1638 TMS_HardwareVersion 1 "V01" 2 "V02";
+VAL_ 1638 TMS_SoftwareVersion 1 "V01" 2 "V02";
+VAL_ 1638 TMS_IGN_Sta 0 "OFF" 1 "ON";
+VAL_ 1638 TMS_T1_Sta 0 "True" 1 "Fault";
+VAL_ 1638 TMS_T2_Sta 0 "True" 1 "Fault";
+VAL_ 1638 TMS_T3_Sta 0 "True" 1 "Fault";
+VAL_ 1638 TMS_LPT_T_Sta 0 "True" 1 "Fault";
+VAL_ 1638 TMS_HPT_T_Sta 0 "True" 1 "Fault";
+VAL_ 1638 TMS_Liquid1_Sta 0 "True" 1 "Fault";
+VAL_ 1638 TMS_Liquid2_Sta 0 "True" 1 "Fault";
+VAL_ 1638 TMS_LPT_P_Sta 0 "True" 1 "Fault";
+VAL_ 1638 TMS_HPT_P_Sta 0 "True" 1 "Fault";
+VAL_ 1638 TMS_Fan1_FB_Sta 0 "Default" 1 "Action";
+VAL_ 1638 TMS_Tprotect_FB_Sta 0 "Default" 1 "Action";
+VAL_ 1638 TMS_Pump_SW_Sta 0 "Default" 1 "Action";
+VAL_ 1638 TMS_Fan2_FB_Sta 0 "Default" 1 "Action";
+VAL_ 1638 TMS_Capture2_FB_Sta 0 "Default" 1 "Action";
+VAL_ 1638 TMS_Capture1_FB_Sta 0 "Default" 1 "Action";
+VAL_ 1638 TMS_HV_LK_Sta 0 "Default" 1 "Action";
+VAL_ 1638 TMS_EXV_Sta 0 "True" 1 "Fault";
+VAL_ 1638 TMS_FAN_Sta 0 "True" 1 "Fault";
+VAL_ 1638 TMS_2WayValue_Sta 0 "True" 1 "Fault";
+VAL_ 1911 VCU_PWM1_High_SET 0 "Disable" 1 "Enable";
+VAL_ 1911 VCU_PWM2_High_SET 0 "Disable" 1 "Enable";
+VAL_ 1911 VCU_PWM3_High_SET 0 "Disable" 1 "Enable";
+VAL_ 1911 VCU_PWM4_High_SET 0 "Disable" 1 "Enable";
+VAL_ 1911 VCU_PWM1_Low_SET 0 "Disable" 1 "Enable";
+VAL_ 1911 VCU_PWM2_Low_SET 0 "Disable" 1 "Enable";
+VAL_ 1911 VCU_PWM3_Low_SET 0 "Disable" 1 "Enable";
+VAL_ 1911 VCU_PWM4_Low_SET 0 "Disable" 1 "Enable";
+VAL_ 1911 VCU_LSD1_SET 0 "Disable" 1 "Enable";
+VAL_ 1911 VCU_LSD2_SET 0 "Disable" 1 "Enable";
+VAL_ 1911 VCU_LSD3_SET 0 "Disable" 1 "Enable";
+VAL_ 1911 VCU_LSD4_SET 0 "Disable" 1 "Enable";
+VAL_ 1911 TMS_AD_Channel 0 "T1" 1 "T2" 2 "T3" 3 "Liquid1" 4 "Liquid2" 5 "LPT_P" 6 "LPT_T" 7 "HPT_P" 8 "HPT_T";
+VAL_ 2364506673 TMC2_ComprEn 0 "Off" 1 "On" 11 "Don't care/take no action";
+VAL_ 2566870658 TMS1_TMSCtrlrSt 0 "停止；" 1 "工作；" 10 "故障；" 11 "无效";
+VAL_ 2565812696 COMP_ComprSt 0 "OFF" 1 "ON" 10 "Rsvrd" 11 "Fault";
+VAL_ 2565812696 COMP_CompErrCode 0 "No Error" 1 "过压故障" 10 "欠压故障" 11 "长时过流故障" 100 "瞬时过流故障" 101 "过温故障" 110 "通讯故障" 111 "内部故障" 1000 "故障锁死";
+VAL_ 2566869926 PTC1_PTCWorkSt 0 "待机" 1 "运行" 10 "故障" 11 "无效";
+VAL_ 2566869926 PTC1_PTCErrCode 8 "通讯故障" 7 "过流" 6 "干烧" 5 "出水口温度高" 4 "NTC坏" 3 "欠压" 2 "过压" 0 "No Error" 1 "IGBT故障";
+VAL_ 2566869926 PTC1_PTCErrLevel 0 "正常" 1 "轻微故障" 10 "一般故障" 11 "严重故障（此时断开高压输入）";
+
